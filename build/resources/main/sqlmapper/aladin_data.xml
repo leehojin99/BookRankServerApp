@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.aladin_data">
+    <resultMap id="aladinDataAll" type="persistence.dto.AladinData_DTO">
+        <result property="isbn" column="isbn"/>
+        <result property="cov_url" column="cov_url"/>
+        <result property="rating" column="rating"/>
+        <result property="book_description" column="book_description"/>
+        <result property="ebook" column="ebook"/>
+        <result property="title" column="title"/>
+        <result property="author" column="author"/>
+        <result property="publisher" column="publisher"/>
+    </resultMap>
+    <select id="selectAladinDataAll" resultMap="aladinDataAll">
+        select * from aladin
+    </select>
+    <insert id="insertAladinData" parameterType="AladinData_DTO">
+        INSERT INTO aladin(isbn,cov_url,rating,book_description,
+                            ebook,title,author,publisher)
+        VALUES (#{isbn},#{rating},#{book_description},
+        #{ebook},#{title},#{author},#{publisher})
+    </insert>
+    <delete id="deleteAladinDataAll">
+        DELETE FROM aladin
+    </delete>
+</mapper>

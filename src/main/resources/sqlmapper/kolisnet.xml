@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.kolisnet">
+    <resultMap id="kolisnetAll" type="persistence.dto.KolisNet_DTO">
+        <result property="isbn" column="isbn"/>
+        <result property="rec_key" column="rec_key"/>
+        <result property="lib_name" column="lib_name"/>
+    </resultMap>
+    <select id="selectKolisNetAll" resultMap="kolisnetAll">
+        select * from kolisnet
+    </select>
+    <insert id="insertKolisNet" parameterType="KolisNet_DTO">
+        INSERT INTO kolisnet(isbn,rec_key,lib_name)
+        VALUES (#{isbn},#{rec_key},#{lib_name})
+    </insert>
+    <delete id="deleteKolisNetAll">
+        DELETE FROM kolisnet
+    </delete>
+</mapper>

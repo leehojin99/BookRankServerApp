@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.libraryInfo">
+    <resultMap id="lib_infoAll" type="persistence.dto.LibraryInfo_DTO">
+        <result property="lib_name" column="lib_name"/>
+        <result property="off_day" column="off_day"/>
+        <result property="weekday" column="weekday"/>
+        <result property="satday" column="satday"/>
+        <result property="holiday" column="holiday"/>
+        <result property="address" column="address"/>
+        <result property="call_no" column="call_no"/>
+    </resultMap>
+    <select id="selectLibraryInfoAll" resultMap="lib_infoAll">
+        select * from lib_info
+    </select>
+    <insert id="insertLibraryInfo" parameterType="LibraryInfo_DTO">
+        INSERT INTO kolisnet(lib_name,off_day,weekday,satday,holiday,address,call_no)
+        VALUES (#{lib_name},#{off_day},#{weekday},#{satday},#{holiday},#{address},#{call_no})
+    </insert>
+    <delete id="deleteLibraryInfoAll">
+        DELETE FROM lib_info
+    </delete>
+</mapper>

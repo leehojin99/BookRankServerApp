@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.seoul_data">
+    <resultMap id="seoulDataAll" type="persistence.dto.SeoulData_DTO">
+        <result property="isbn" column="isbn"/>
+        <result property="clf_no" column="clf_no"/>
+        <result property="borrow_cnt" column="borrow_cnt"/>
+        <result property="rank" column="rank"/>
+    </resultMap>
+    <select id="selectSeoulDataAll" resultMap="seoulDataAll">
+        select * from seoul_data
+    </select>
+    <insert id="insertSeoulData" parameterType="SeoulData_DTO">
+        INSERT INTO seoul_data(isbn,clf_no,borrow_cnt)
+        VALUES (#{isbn},#{clf_no},#{borrow_cnt})
+    </insert>
+    <update id="updateSeoulDataRankWithNewRank" parameterType="SeoulData_DTO">
+        UPDATE seoul_data
+        SET seoul_data.rank = #{rank}
+        WHERE isbn = #{isbn}
+    </update>
+    <delete id="deleteSeoulDataAll">
+        DELETE FROM seoul_data
+    </delete>
+</mapper>
