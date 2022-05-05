@@ -30,5 +30,6 @@
         <mapper resource="sqlmapper/kolisnet.xml"/>
         <mapper resource="sqlmapper/library_info.xml"/>
         <mapper resource="sqlmapper/pastrank_data.xml"/>
+
     </mappers>
 </configuration>

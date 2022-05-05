@@ -10,11 +10,11 @@
     <select id="selectPastRankAll" resultMap="pastRankAll">
         select * from past_rank
     </select>
-    <insert id="insertPastRankNet" parameterType="PastRankData_DTO">
-        INSERT INTO past_rank(isbn,rank)
+    <insert id="insertPastRank" parameterType="PastRankData_DTO">
+        INSERT INTO past_rank
         VALUES (#{isbn},#{rank})
     </insert>
-    <delete id="deletePastRankNetAll">
+    <delete id="deletePastRankAll">
         DELETE FROM past_rank
     </delete>
 </mapper>

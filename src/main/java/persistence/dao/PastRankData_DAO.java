@@ -28,7 +28,7 @@ public class PastRankData_DAO {
     public void insertData(PastRankData_DTO pastRankData_DTO){
         SqlSession session = sqlSessionFactory.openSession();
         try{
-            session.insert("insertPastRankNet",pastRankData_DTO);
+            session.insert("insertPastRank",pastRankData_DTO);
             session.commit();
         }
         catch(Exception e) {
@@ -43,7 +43,7 @@ public class PastRankData_DAO {
     public void deleteAll(){
         SqlSession session = sqlSessionFactory.openSession();
         try{
-            session.delete("deletePastRankNetAll");
+            session.delete("deletePastRankAll");
             session.commit();
         }
         catch(Exception e) {

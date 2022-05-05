@@ -33,22 +33,24 @@ public class Main{
         PastRankData_DAO pastRankData_dao = new PastRankData_DAO(MyBatisConnectionFactory.getSqlSessionFactory());
         PastRankData_Service pastRankData_service = new PastRankData_Service(pastRankData_dao);
 
-        SeoulData_View seoulData_view = new SeoulData_View();
-
-        List<SeoulData_DTO> allData;
-        allData = seoulData_service.selectSeoulDataAll();
-        seoulData_view.printAll(allData);
-
-        seoulData_service.insertSeoulData("q1",11,22);
-
-        allData = seoulData_service.selectSeoulDataAll();
-        seoulData_view.printAll(allData);
-
-        seoulData_service.updateSeoulDataRankWithNewRank("q1",99);
-
-        allData = seoulData_service.selectSeoulDataAll();
-        seoulData_view.printAll(allData);
-
-        seoulData_service.deleteSeoulDataAll();
+//        SeoulData_View seoulData_view = new SeoulData_View();
+//
+//        List<SeoulData_DTO> allData;
+//        allData = seoulData_service.selectSeoulDataAll();
+//        seoulData_view.printAll(allData);
+//
+//        seoulData_service.insertSeoulData("q1",11,22);
+//
+//        allData = seoulData_service.selectSeoulDataAll();
+//        seoulData_view.printAll(allData);
+//
+//        seoulData_service.updateSeoulDataRankWithNewRank("q1",99);
+//
+//        allData = seoulData_service.selectSeoulDataAll();
+//        seoulData_view.printAll(allData);
+//
+//        seoulData_service.deleteSeoulDataAll();
+        PastRankBackup pastRankBackup = new PastRankBackup(seoulData_service, pastRankData_service);
+        pastRankBackup.backupSeoulDataToPastRankData();
     }
 }
