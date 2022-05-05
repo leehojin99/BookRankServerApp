@@ -12,7 +12,7 @@
         select * from kolisnet
     </select>
     <insert id="insertKolisNet" parameterType="KolisNet_DTO">
-        INSERT INTO kolisnet(isbn,rec_key,lib_name)
+        INSERT INTO kolisnet
         VALUES (#{isbn},#{rec_key},#{lib_name})
     </insert>
     <delete id="deleteKolisNetAll">

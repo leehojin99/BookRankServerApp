@@ -16,7 +16,7 @@
         select * from lib_info
     </select>
     <insert id="insertLibraryInfo" parameterType="LibraryInfo_DTO">
-        INSERT INTO kolisnet(lib_name,off_day,weekday,satday,holiday,address,call_no)
+        INSERT INTO lib_info
         VALUES (#{lib_name},#{off_day},#{weekday},#{satday},#{holiday},#{address},#{call_no})
     </insert>
     <delete id="deleteLibraryInfoAll">
