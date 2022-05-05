@@ -21,7 +21,7 @@ public class KolisNet_Service {
         kolisNet_dto.setLib_name(lib_name);
         kolisNet_dao.insertData(kolisNet_dto);
     }
-    public void deleteAladinDataAll(){
+    public void deleteKolisNetAll(){
         kolisNet_dao.deleteAll();
     }
 }

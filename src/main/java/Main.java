@@ -50,7 +50,11 @@ public class Main{
 //        seoulData_view.printAll(allData);
 //
 //        seoulData_service.deleteSeoulDataAll();
-        PastRankBackup pastRankBackup = new PastRankBackup(seoulData_service, pastRankData_service);
-        pastRankBackup.backupSeoulDataToPastRankData();
+
+//        PastRankBackup pastRankBackup = new PastRankBackup(seoulData_service, pastRankData_service);
+//        pastRankBackup.backupSeoulDataToPastRankData();
+
+        DailyWork dailyWork = new DailyWork(seoulData_service,aladinData_service,kolisNet_service,libraryInfo_service,pastRankData_service);
+        dailyWork.DailyWork();
     }
 }
