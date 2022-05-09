@@ -20,7 +20,7 @@ public class PastRankData_Service {
         pastRankData_dto.setRank(rank);
         pastRankData_dao.insertData(pastRankData_dto);
     }
-    public void deleteLibraryDataAll(){
+    public void deletePastRankDataAll(){
         pastRankData_dao.deleteAll();
     }
 }

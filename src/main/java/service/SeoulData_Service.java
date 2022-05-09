@@ -1,7 +1,16 @@
 package service;
 
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 import persistence.dao.SeoulData_DAO;
 import persistence.dto.SeoulData_DTO;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import java.net.URLEncoder;
+import java.util.ArrayList;
 import java.util.List;
 
 public class SeoulData_Service {
@@ -30,4 +39,5 @@ public class SeoulData_Service {
     public void deleteSeoulDataAll(){
         seoulData_dao.deleteAll();
     }
+
 }

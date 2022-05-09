@@ -18,7 +18,7 @@
     </select>
     <insert id="insertAladinData" parameterType="AladinData_DTO">
         INSERT INTO aladin
-        VALUES (#{isbn},#{rating},#{book_description},
+        VALUES (#{isbn},#{cov_url},#{rating},#{book_description},
         #{ebook},#{title},#{author},#{publisher})
     </insert>
     <delete id="deleteAladinDataAll">

@@ -1,10 +1,6 @@
 import persistence.MyBatisConnectionFactory;
 import persistence.dao.*;
-import persistence.dto.SeoulData_DTO;
 import service.*;
-import view.SeoulData_View;
-
-import java.util.List;
 
 //config/config.xml => 환경설정,매퍼등록,매퍼 파라미터로 객체 사용시 정의
 //sqlmapper/~mapper.xml => 쿼리작성
@@ -18,21 +14,8 @@ import java.util.List;
 
 public class Main{
     public static void main(String[] args) {
-        SeoulData_DAO seoulData_dao = new SeoulData_DAO(MyBatisConnectionFactory.getSqlSessionFactory());
-        SeoulData_Service seoulData_service = new SeoulData_Service(seoulData_dao);
-
-        AladinData_DAO aladinData_dao = new AladinData_DAO(MyBatisConnectionFactory.getSqlSessionFactory());
-        AladinData_Service aladinData_service = new AladinData_Service(aladinData_dao);
-
-        KolisNet_DAO kolisNet_dao = new KolisNet_DAO(MyBatisConnectionFactory.getSqlSessionFactory());
-        KolisNet_Service kolisNet_service = new KolisNet_Service(kolisNet_dao);
-
-        LibrayInfo_DAO librayInfo_dao = new LibrayInfo_DAO(MyBatisConnectionFactory.getSqlSessionFactory());
-        LibraryInfo_Service libraryInfo_service = new LibraryInfo_Service(librayInfo_dao);
-
-        PastRankData_DAO pastRankData_dao = new PastRankData_DAO(MyBatisConnectionFactory.getSqlSessionFactory());
-        PastRankData_Service pastRankData_service = new PastRankData_Service(pastRankData_dao);
-
+        ServerController serverController = new ServerController();
+        serverController.serverMain();
 //        SeoulData_View seoulData_view = new SeoulData_View();
 //
 //        List<SeoulData_DTO> allData;
@@ -51,10 +34,9 @@ public class Main{
 //
 //        seoulData_service.deleteSeoulDataAll();
 
-//        PastRankBackup pastRankBackup = new PastRankBackup(seoulData_service, pastRankData_service);
+//        service.PastRankBackup pastRankBackup = new service.PastRankBackup(seoulData_service, pastRankData_service);
 //        pastRankBackup.backupSeoulDataToPastRankData();
+//
 
-        DailyWork dailyWork = new DailyWork(seoulData_service,aladinData_service,kolisNet_service,libraryInfo_service,pastRankData_service);
-        dailyWork.DailyWork();
     }
 }
